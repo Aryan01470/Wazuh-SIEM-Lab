@@ -1,0 +1,33 @@
+nmap -sV 192.168.56.102
+hydra -l admin -P rockyou.txt ssh://192.168.56.102
+Invoke-WebRequest example.com
+
+# Setup Commands and Project Notes
+
+This document contains the key commands used during the setup
+and validation of the Wazuh + Sysmon Threat Detection Lab.
+
+---
+
+## 📌 Lab Components
+
+- **Ubuntu Server**: Wazuh Manager + Dashboard  
+- **Windows 10 Endpoint**: Wazuh Agent + Sysmon  
+- **Kali Linux**: Attack simulation machine  
+- Environment deployed in **Oracle VirtualBox**
+
+---
+
+## ✅ Sysmon Installation (Windows)
+
+Sysmon was installed to generate detailed telemetry such as:
+
+- Process creation  
+- PowerShell execution  
+- Network connections  
+- File activity  
+
+### Installation Command
+
+```powershell
+Sysmon64.exe -accepteula -i sysmon-config.xml

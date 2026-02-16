@@ -1,0 +1,4 @@
+configs/sysmon-config.xml
+Sysmon64.exe -accepteula -i sysmon-config.xml
+sysmon64.exe -c
+Get-Service Sysmon64
